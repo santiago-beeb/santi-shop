@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: '/'
+    publicPath: "/",
   },
   mode: "development",
   resolve: {
@@ -34,17 +34,6 @@ module.exports = {
         test: /\.(css|scss)$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
-      {
-        test: /\.(png|jp(e*)g|svg|gif)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "images/[hash]-[name].[ext]",
-            },
-          },
-        ],
-      },
     ],
   },
   plugins: [
@@ -58,10 +47,5 @@ module.exports = {
   ],
   devServer: {
     historyApiFallback: true,
-    static: {
-      directory: path.join(__dirname, "public"),
-    },
-    compress: true,
-    port: 3005,
   },
 };
