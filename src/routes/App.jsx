@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout } from '@containers/layout';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Login } from "@pages/Login";
 import { Checkout } from "@pages/Checkout";
 import { CreateAccount } from "@pages/CreateAccount";
@@ -19,7 +19,7 @@ const App = () => {
   const initialState = useInitialState();
   return (
     <AppContext.Provider value={initialState}>
-      <BrowserRouter basename="/santi-shop/">
+      <HashRouter>
         <Layout>
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -34,7 +34,7 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
-      </BrowserRouter> 
+      </HashRouter> 
     </AppContext.Provider>
   )
 }
