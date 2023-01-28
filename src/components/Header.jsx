@@ -24,7 +24,7 @@ const Header = () => {
         <img src={logo} alt="logo" className="nav-logo" />
         <ul>
           <li>
-            <a href="/login">All</a>
+            <a href="/santi-shop/#/login">All</a>
           </li>
           <li>
             <a href="/">Clothes</a>
