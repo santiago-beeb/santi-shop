@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
-import {AppContext} from '@context/AppContext'
+import { AppContext } from "@context/AppContext";
 import "@styles/OrderItem.scss";
 import icon_close from "@icons/icon_close.png";
 
 const OrderItem = ({ product }) => {
   const { removeFromCart } = useContext(AppContext);
-  const onClick = product => {
+  const onClick = (product) => {
     removeFromCart(product);
-  }
+  };
   return (
     <div className="OrderItem">
       <figure>
@@ -20,7 +20,12 @@ const OrderItem = ({ product }) => {
           currency: "USD",
         }).format(product.price)}
       </p>
-      <img className="x" src={icon_close} alt="close" onClick={() => onClick(product)} />
+      <img
+        className="x"
+        src={icon_close}
+        alt="close"
+        onClick={() => onClick(product)}
+      />
     </div>
   );
 };

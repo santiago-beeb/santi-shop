@@ -15,10 +15,12 @@ const SendEmail = () => {
         <div className="email-image">
           <img src={icon_email} alt="email" />
         </div>
+        <form action="/santi-shop/#/login">
         <button className="primary-button login-button">Login</button>
+        </form>
         <p className="resend">
           <span>Didn't receive the email?</span>
-          <a href="/">Resend</a>
+          <a href="/santi-shop/#/password-recovery">Resend</a>
         </p>
       </div>
     </div>

@@ -11,7 +11,7 @@ const PasswordRecovery = () => {
         <p className="subtitle">
           Inform the email address used to create your account
         </p>
-        <form action="/" className="form">
+        <form action="/santi-shop/#/send-email" className="form">
           <label htmlFor="email" className="label">
             Email address
           </label>

@@ -12,14 +12,22 @@
   width: 360px;
   padding: 24px;
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
   right: 0;
   background-color: white;
   top: 60px;
-  bottom: auto;
+  bottom: 0;
   border-radius: 6px;
   border: 1px solid var(--very-light-pink);
   animation: swipeLeft 0.26s ease;
+}
+.cart-product-list {
+	max-height: calc(100vh - 300px);
+	overflow-y: auto;
+  scroll-behavior: smooth;	
+}
+.cart-product-list::-webkit-scrollbar {
+	display: none;
 }
 .title-container {
   display: flex;
@@ -27,6 +35,7 @@
 .title-container img {
   transform: rotate(180deg);
   margin-right: 14px;
+  cursor: pointer;
 }
 .title {
   font-size: var(--lg);

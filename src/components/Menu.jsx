@@ -6,15 +6,15 @@ const Menu = () => {
     <div className="Menu">
       <ul>
         <li>
-          <a href="/" className="title">
+          <a href="/santi-shop/#/orders" className="title">
             My orders
           </a>
         </li>
         <li>
-          <a href="/">My account</a>
+          <a href="/santi-shop/#/account">My account</a>
         </li>
         <li>
-          <a href="/">Sign out</a>
+          <a href="/santi-shop/#/login">Sign out</a>
         </li>
       </ul>
     </div>

@@ -6,7 +6,7 @@ const MyAccount = () => {
     <div className="MyAccount">
       <div className="MyAccount-container">
         <h1 className="title">My account</h1>
-        <form action="/" className="form">
+        <form action="#" className="form">
           <div>
             <label for="name" className="label">
               Name

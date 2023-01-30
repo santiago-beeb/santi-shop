@@ -6,7 +6,7 @@ const CreateAccount = () => {
     <div className="CreateAccount">
       <div className="CreateAccount-container">
         <h1 className="title">My account</h1>
-        <form action="/" className="form">
+        <form action="/santi-shop/#/login" className="form">
           <div>
             <label for="name" className="label">
               Name

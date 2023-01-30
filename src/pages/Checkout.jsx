@@ -1,22 +1,44 @@
-import React from "react";
-import {OrderItem} from "@components/OrderItem";
+import React, { useContext } from "react";
+import { OrderItem } from "@components/OrderItem";
+import { AppContext } from "@context/AppContext";
 import "@styles/Checkout.scss";
+import arrow from "@icons/flechita.svg";
 
-const Checkout = () => {
+const Checkout = ({ setToggle }) => {
+  const { state } = useContext(AppContext);
+  const today = new Date(Date.now()).toLocaleString().split(", ")[0];
+
+  const sumTotal = () => {
+    const reducer = (accumulator, currentValue) =>
+      accumulator + currentValue.price;
+    const sum = state.cart.reduce(reducer, 0);
+    return sum;
+  };
+  
   return (
     <div className="Checkout">
       <div className="Checkout-container">
-        <h1 className="title">My order</h1>
+        <div className="title-container" onClick={() => setToggle(false)}>
+          <img src={arrow} alt="arrow" />
+          <h1 className="title">My order</h1>
+        </div>
         <div className="Checkout-content">
           <div className="order">
             <p>
-              <span>03.25.21</span>
-              <span>6 articles</span>
+              <span>{today}</span>
+              <span>{state.cart.length} articles</span>
             </p>
-            <p>$560.00</p>
+            <p>
+            {new Intl.NumberFormat("en-US", {
+              style: "currency",
+              currency: "USD",
+            }).format(sumTotal())}
+          </p>
           </div>
         </div>
-        <OrderItem />
+        {state.cart.map((product) => (
+          <OrderItem product={product} key={`orderItem-${product.id}`} />
+        ))}
       </div>
     </div>
   );
